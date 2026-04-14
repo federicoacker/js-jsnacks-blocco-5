@@ -58,7 +58,14 @@ const filteredMap = myMapFilter(posts, (post) => { // Chiamata alla funziona myM
     const year = parseInt(post.date.split("/")[2]); // Andiamo a prendere l'anno, facendo lo split della stringa date, selezionando il secondo
     // elemento dell'array risultante (che è l'anno) e facendo poi il parseInt
     if(year > 2020){ // Controlliamo se l'anno è superiore al 2020
-        value = post; // in quel caso il mio value da restituire sarà l'elemnto stesso
+        value = post; // in quel caso il mio value da restituire sarà l'elemento stesso
+        // a questo punto posso fare le modifiche che farebbe una callback normale di una map function
+        // ad esempio
+        const {author, content} = post;
+        value = {
+            author,
+            content
+        }
         return value; // lo restituiamo
     }
     return undefined; // altrimenti, restituiamo undefined
