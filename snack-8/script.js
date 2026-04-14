@@ -19,7 +19,7 @@ const students = [
   },
 ];
 
-const classe = students.find((student) => student.name === "Marco Lanci").class; // Usiamo di nuovo la find, 
+let classe = students.find((student) => student.name === "Marco Lanci").class; // Usiamo di nuovo la find, 
 // la callback darà true solo quando trova Marco Lanci, a quel punto find mi restituirà l'oggetto
 // Quindi essendo che abbiamo l'oggetto possiamo usare direttamente .class e recuperare la classe
 // In realtà, sarebbe più corretto dire:
