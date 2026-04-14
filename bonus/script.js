@@ -61,14 +61,16 @@ const filteredMap = myMapFilter(posts, (post) => { // Chiamata alla funziona myM
         value = post; // in quel caso il mio value da restituire sarà l'elemento stesso
         // a questo punto posso fare le modifiche che farebbe una callback normale di una map function
         // ad esempio
-        const {author, content} = post;
         value = {
-            author,
-            content
-        }
+            author:value.author, 
+            content:value.content
+        };
         return value; // lo restituiamo
     }
     return undefined; // altrimenti, restituiamo undefined
-})
+    }
+);
+
+
 
 console.log(filteredMap);

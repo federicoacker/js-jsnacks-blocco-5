@@ -11,10 +11,19 @@ const zucchine = [
   { type: 'Calabrese', weight: 14, length: 4 },
 ];
 
-const zucchineLunghe = zucchine.filter((zucchina) => zucchina.length >= 15); // Funzione di callback che da true solo quando la zucchina ha length >= 15
-const zucchineCorte = zucchine.filter((zucchina) => zucchina.length < 15); // Funzione di callback che da true solo quando la zucchina ha length < 15
-// e poi le filter functions semplicemente aggiungono all'array l'elemento per cui la callback ha restituito true e poi la filter restituisce
-// l'intero array.
+const zucchineLunghe = [];
+const zucchineCorte = [];
+// Fatto con il forEach che mi risparmia di ciclare l'array 2 volte e lo cicla una sola volta.
+zucchine.forEach((zucchina) => {
+  if(zucchina.length >= 15){
+    zucchineLunghe.push(zucchina);
+  }
+  else{
+    zucchineCorte.push(zucchina);
+  }
+})
+
+
 console.log(zucchineCorte);
 console.log(zucchineLunghe);
 
